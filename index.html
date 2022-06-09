@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>ToDo</title>
+  </head>
+  <body>
+    <section class="notepad">
+      <header>
+        <h1>ToDo list</h1>
+      </header>
+      <div class="underline"></div>
+      <main>
+        <nav class="list">
+            <div class="obj">
+                <h2>Training plan</h2>
+                <img src="svg/complete-list.svg" alt="complete" class="complete-box">
+            </div>
+            <div class="list-items">
+                <div class="task">
+                    <img src="svg/complete.svg" alt="complete" class="complete">
+                    <p>Run</p>
+                </div>
+                <div class="task">
+                    <img src="svg/complete.svg" alt="complete" class="complete">
+                    <p>Swimming</p>
+                </div>
+                <div class="task">
+                    <img src="svg/complete.svg" alt="complete" class="complete">
+                    <p>Relax</p>
+                </div>
+                <div class="task">
+                    <img src="svg/add.svg" alt="complete" class="complete add-task">
+                    <p class="empty-text"></p>
+                </div>
+            </div>
+        </nav>
+        <div class="create-plan">
+            <img src="svg/add.svg" alt="add" class="add">
+            <h2 class="add-text">Add new plan<h2>
+        </div>
+        <footer>
+          <div class="container">
+            <button class="btn-window"><img src="svg/edit.svg" alt="edit" class="btn-img">Current</button>
+            <button class="btn-window"><img src="svg/trash.svg" alt="edit" class="btn-img">Completed</button>
+          </div>
+        </footer>
+      </main>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
