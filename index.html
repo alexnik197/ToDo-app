@@ -7,12 +7,25 @@
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap"
-      rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap"
+    rel="stylesheet"
     />
     <title>ToDo</title>
+    <script defer src="script.js"></script>
   </head>
   <body>
+    <div class="modal">
+      <div class="modal-window">
+        <span class="modal-title">Type new task</span>
+        <div class="modal-input">
+          <input type="text" class="modal-input__text" id="inputAdd">
+          <button class="btn-add" id="btnAdd">Add</button>
+        </div>
+        <!-- modal-input -->
+      </div>
+      <!-- modal-window -->
+    </div>
+    <!-- modal -->
     <section class="notepad">
       <header>
         <h1>ToDo list</h1>
@@ -21,30 +34,25 @@
       <main>
         <nav class="list">
             <div class="obj">
-                <h2>Training plan</h2>
+                <h2>Today</h2>
                 <img src="svg/complete-list.svg" alt="complete" class="complete-box">
             </div>
-            <div class="list-items">
-                <div class="task">
+            <div class="list-wrapper">
+              <div class="list-items" id="list">
+                <div class="task" id="currentTask">
                     <img src="svg/complete.svg" alt="complete" class="complete">
                     <p>Run</p>
                 </div>
-                <div class="task">
-                    <img src="svg/complete.svg" alt="complete" class="complete">
-                    <p>Swimming</p>
-                </div>
-                <div class="task">
-                    <img src="svg/complete.svg" alt="complete" class="complete">
-                    <p>Relax</p>
-                </div>
-                <div class="task">
-                    <img src="svg/add.svg" alt="complete" class="complete add-task">
-                    <p class="empty-text"></p>
-                </div>
+              </div>
+              <!-- list-items -->
+              <div class="create-task" id="createTask">
+                <img src="svg/add.svg" alt="complete" class="complete add-task" id="btnCreateTask">
+              </div>
             </div>
+            <!-- list-wrapper -->
         </nav>
-        <div class="create-plan">
-            <img src="svg/add.svg" alt="add" class="add">
+        <div class="create-category">
+            <img src="svg/add.svg" alt="add" class="add-category">
             <h2 class="add-text">Add new plan<h2>
         </div>
         <footer>
@@ -55,6 +63,6 @@
         </footer>
       </main>
     </section>
-    <script src="script.js"></script>
+    <!-- notepad -->
   </body>
 </html>

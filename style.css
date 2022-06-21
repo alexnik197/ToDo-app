@@ -1,5 +1,8 @@
 body {
-  padding: 128px 430px 128px 430px;
+  position: relative;
+  height: 100vh;
+  padding-left: 430px;
+  padding-right: 430px;
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -11,14 +14,76 @@ body {
   background-color: #c3d4ff;
 }
 
+.modal {
+  overflow: hidden;
+  position: absolute;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(44, 44, 44, 0.6);
+  backdrop-filter: blur(2px);
+  display: none;
+}
+
+.modal-open {
+  display: flex;
+}
+
+.modal-window {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+  padding: 50px 70px;
+  border-radius: 15px;
+  background-color: rgb(248, 248, 248);
+  border: 2px solid rgb(43, 43, 43);
+}
+
+.modal-title {
+  font-size: 24px;
+  color: rgb(12, 12, 12);
+}
+
+.modal-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.modal-input__text {
+  text-align: center;
+  border: 2px solid rgb(12, 12, 12);
+}
+
+.btn-add {
+  height: 35px;
+  width: 50px;
+  background-color: rgb(46, 187, 57);
+  border: 2px solid rgb(12, 12, 12);
+  transition: 0.2s;
+}
+
+.btn-add:hover {
+  color: rgb(248, 248, 248);
+}
+
+.btn-add:active {
+  box-shadow: 0px 0px 0px 2px rgb(12, 12, 12) inset;
+  font-size: 16px;
+}
+
 .notepad {
   position: relative;
-  width: 580px;
-  height: 600px;
+  width: 500px;
+  min-height: 500px;
   padding: 40px 99px 60px 99px;
-  /* height: max-content; */
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   flex-direction: column;
   background-color: #fff7b2;
@@ -57,7 +122,7 @@ p {
   background-color: rgba(0, 0, 0, 0.3);
   height: 2px;
   width: 100%;
-  margin-bottom: 25px;
+  margin-bottom: 40px;
 }
 
 main {
@@ -67,12 +132,22 @@ main {
   flex-direction: column;
 }
 
+.list-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 13px;
+}
+
 .list {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 110px;
 }
 
 .list-items {
@@ -97,6 +172,11 @@ main {
   width: 100%;
 }
 
+.create-task {
+  position: relative;
+  width: 100%;
+}
+
 p {
   overflow-wrap: break-word;
 }
@@ -105,7 +185,7 @@ p {
   min-height: 1em;
 }
 
-.create-plan {
+.create-category {
   bottom: 65px;
   left: 20px;
   position: absolute;
@@ -172,22 +252,39 @@ img:hover {
   border-radius: 0;
 }
 
+.add {
+  width: 40px;
+  height: 40px;
+}
+
 .add-task:hover {
   background-color: rgb(255, 255, 255);
+  transform: rotate(90deg);
+  height: 40px;
+  width: 40px;
 }
 
 .complete-box:hover {
   background-color: rgb(46, 187, 57);
   border-radius: 8px;
 }
+
 .complete {
   position: absolute;
   left: -35px;
 }
 
-.add {
+.add-category {
+  border-radius: 50px;
   width: 40px;
   height: 40px;
+}
+
+.add-category:hover {
+  background-color: rgb(255, 255, 255);
+  transform: rotate(180deg);
+  height: 40px;
+  width: 40px;
 }
 
 .add-text {
