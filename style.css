@@ -12,6 +12,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #c3d4ff;
+  overflow: hidden;
 }
 
 .modal {
@@ -151,6 +152,7 @@ main {
 }
 
 .list-items {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -167,9 +169,16 @@ main {
 }
 
 .task {
-  position: relative;
   border-bottom: 2px solid black;
   width: 100%;
+}
+
+.task-done {
+  position: absolute;
+  transform: translate(1000px, 0);
+  transition-timing-function: ease-in;
+  opacity: 0;
+  transition: all 0.7s;
 }
 
 .create-task {
@@ -272,6 +281,17 @@ img:hover {
 .complete {
   position: absolute;
   left: -35px;
+}
+
+.complete-done {
+  position: absolute;
+  left: -35px;
+  background-color: rgb(46, 187, 57);
+  border-radius: 50px;
+}
+
+.text-done {
+  text-decoration: line-through;
 }
 
 .add-category {

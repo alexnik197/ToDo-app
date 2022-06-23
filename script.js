@@ -42,7 +42,38 @@ document.addEventListener("keydown", function (e) {
 function addElement(e) {
   if (e === "") return;
   const newTask = document.createElement("div");
+  const imgComplete = document.createElement("img");
+  const textTask = document.createElement("p");
+  const removeTask = function () {
+    newTask.remove();
+  };
+
   newTask.className = "task";
+  imgComplete.className = "complete";
+  imgComplete.src = "svg/complete.svg";
+
+  textTask.textContent = e;
+
   list.appendChild(newTask);
-  newTask.innerHTML += `<img src="svg/complete.svg" alt="complete" class="complete"><p>${e}</p>`;
+  newTask.appendChild(imgComplete);
+  newTask.appendChild(textTask);
+
+  imgComplete.addEventListener("click", function () {
+    imgComplete.className = "complete-done";
+    textTask.className = "text-done";
+
+    const listCoord = document
+      .querySelector(".list-items")
+      .getBoundingClientRect();
+    const taskCoord = newTask.getBoundingClientRect();
+    const newCoord = listCoord.top - taskCoord.top;
+
+    imgComplete.addEventListener("click", function () {
+      if (imgComplete.classList.contains("complete-done")) {
+        newTask.className = "task-done";
+        newTask.style.top = `${Math.abs(newCoord)}px`;
+        setTimeout(removeTask, 500);
+      }
+    });
+  });
 }
