@@ -91,6 +91,7 @@ body {
 }
 
 header {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -123,7 +124,6 @@ p {
   background-color: rgba(0, 0, 0, 0.3);
   height: 2px;
   width: 100%;
-  margin-bottom: 40px;
 }
 
 main {
@@ -158,8 +158,12 @@ main {
   width: 100%;
   gap: 10px;
 }
-
-.obj {
+.category {
+  width: 100%;
+  margin-top: 40px;
+}
+.category-header {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

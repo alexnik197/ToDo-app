@@ -1,12 +1,20 @@
 "use strict";
 
+// GLOBAL VARIABLES
 const modal = document.querySelector(".modal");
 const btnCreateTask = document.querySelectorAll("#btnCreateTask");
 const btnAdd = document.querySelector("#btnAdd");
 const inputAdd = document.querySelector("#inputAdd");
-const list = document.querySelector("#list");
-const closeModal = function () {
-  modal.classList.remove("modal-open");
+const list = document.querySelector(".list");
+const listItems = document.querySelector("#listItems");
+const addCategory = document.querySelector(".add-category");
+
+// GLOBAL FUNCTIONS
+const closeModal = () => modal.classList.remove("modal-open");
+const inputText = function () {
+  const inputVal = inputAdd.value;
+  inputAdd.value = "";
+  addElement(inputVal);
 };
 
 // // OPEN MODAL
@@ -23,24 +31,64 @@ modal.addEventListener("click", function (e) {
   }
 });
 
+// SAVE INPUT TEXT
 btnAdd.addEventListener("click", function () {
-  const inputVal = inputAdd.value;
-  inputAdd.value = "";
-  addElement(inputVal);
+  inputText();
   closeModal();
 });
 
+// ACTIONS WITH KEYBOARD
 document.addEventListener("keydown", function (e) {
-  if (e.key == "Escape") {
-    if (modal.classList.contains("modal-open")) {
-      closeModal();
-    }
+  if (e.key == "Escape" && modal.classList.contains("modal-open")) {
+    closeModal();
+  } else if (e.key == "Enter") {
+    inputText();
+    closeModal();
   }
+});
+
+// ADD CATEGORY
+addCategory.addEventListener("click", function () {
+  const createCategory = document.createElement("div");
+  const createCategoryHeader = document.createElement("div");
+  const createListWrapper = document.createElement("div");
+  const createListItems = document.createElement("div");
+  const createTaskEl = document.createElement("div");
+  const createCategoryTitle = document.createElement("h2");
+  const imgComplete = document.createElement("img");
+  const imgAddTask = document.createElement("img");
+
+  createCategory.className = "category";
+  createCategoryHeader.className = "category-header";
+  imgComplete.className = "complete-box";
+  createListWrapper.className = "list-wrapper";
+  createListItems.className = "list-items";
+  createTaskEl.className = "create-task";
+  imgAddTask.className = "complete add-task";
+
+  createListItems.setAttribute("id", "listItems");
+  createTaskEl.setAttribute("id", "createTask");
+  imgAddTask.setAttribute("id", "btnCreateTask");
+
+  imgComplete.src = "svg/complete-list.svg";
+  imgAddTask.src = "svg/add.svg";
+
+  createCategoryTitle.textContent = "Test";
+
+  list.appendChild(createCategory);
+  createCategory.appendChild(createCategoryHeader);
+  createCategory.appendChild(createListWrapper);
+  createCategoryHeader.appendChild(createCategoryTitle);
+  createCategoryHeader.appendChild(imgComplete);
+  createListWrapper.appendChild(createListItems);
+  createListWrapper.appendChild(createTaskEl);
+  createTaskEl.appendChild(imgAddTask);
 });
 
 // ADD TASK
 function addElement(e) {
   if (e === "") return;
+
   const newTask = document.createElement("div");
   const imgComplete = document.createElement("img");
   const textTask = document.createElement("p");
@@ -54,7 +102,7 @@ function addElement(e) {
 
   textTask.textContent = e;
 
-  list.appendChild(newTask);
+  listItems.appendChild(newTask);
   newTask.appendChild(imgComplete);
   newTask.appendChild(textTask);
 
@@ -62,9 +110,7 @@ function addElement(e) {
     imgComplete.className = "complete-done";
     textTask.className = "text-done";
 
-    const listCoord = document
-      .querySelector(".list-items")
-      .getBoundingClientRect();
+    const listCoord = listItems.getBoundingClientRect();
     const taskCoord = newTask.getBoundingClientRect();
     const newCoord = listCoord.top - taskCoord.top;
 
