@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
     <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap"
-    rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap"
+      rel="stylesheet"
     />
     <title>ToDo</title>
     <script defer src="script.js"></script>
@@ -18,7 +18,7 @@
       <div class="modal-window">
         <span class="modal-title">Type new task</span>
         <div class="modal-input">
-          <input type="text" class="modal-input__text" id="inputAdd">
+          <input type="text" class="modal-input__text" id="inputAdd" />
           <button class="btn-add" id="btnAdd">Add</button>
         </div>
         <!-- modal-input -->
@@ -33,34 +33,27 @@
       </header>
       <main>
         <nav class="list">
-            <div class="category">
-              <div class="category-header">
-                <h2>Today</h2>
-                <img src="svg/complete-list.svg" alt="complete" class="complete-box">
-              </div>
-              <div class="list-wrapper">
-                <div class="list-items" id="listItems"></div>
-                <!-- list-items -->
-                <div class="create-task" id="createTask">
-                  <img src="svg/add.svg" alt="complete" class="complete add-task" id="btnCreateTask">
-                </div>
-              </div>
-              <!-- list-wrapper -->
+          <div class="category">
+            <div class="category-header">
+              <h2>All tasks</h2>
             </div>
-            <!-- .category -->
+            <div class="list-wrapper">
+              <div class="list-items" id="listItems"></div>
+              <!-- list-items -->
+              <div class="create-task" id="createTask">
+                <img
+                  src="svg/add.svg"
+                  alt="complete"
+                  class="complete add-task"
+                  id="btnCreateTask"
+                />
+              </div>
+            </div>
+            <!-- list-wrapper -->
+          </div>
+          <!-- .category -->
         </nav>
         <!-- list -->
-        <div class="create-category">
-            <img src="svg/add.svg" alt="add" class="add-category">
-            <h2 class="add-text">Add category<h2>
-        </div>
-        <!-- create-category -->
-        <footer>
-          <div class="container">
-            <button class="btn-window"><img src="svg/edit.svg" alt="edit" class="btn-img">Current</button>
-            <button class="btn-window"><img src="svg/trash.svg" alt="edit" class="btn-img">Completed</button>
-          </div>
-        </footer>
       </main>
     </section>
     <!-- notepad -->

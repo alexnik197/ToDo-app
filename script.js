@@ -47,44 +47,6 @@ document.addEventListener("keydown", function (e) {
   }
 });
 
-// ADD CATEGORY
-addCategory.addEventListener("click", function () {
-  const createCategory = document.createElement("div");
-  const createCategoryHeader = document.createElement("div");
-  const createListWrapper = document.createElement("div");
-  const createListItems = document.createElement("div");
-  const createTaskEl = document.createElement("div");
-  const createCategoryTitle = document.createElement("h2");
-  const imgComplete = document.createElement("img");
-  const imgAddTask = document.createElement("img");
-
-  createCategory.className = "category";
-  createCategoryHeader.className = "category-header";
-  imgComplete.className = "complete-box";
-  createListWrapper.className = "list-wrapper";
-  createListItems.className = "list-items";
-  createTaskEl.className = "create-task";
-  imgAddTask.className = "complete add-task";
-
-  createListItems.setAttribute("id", "listItems");
-  createTaskEl.setAttribute("id", "createTask");
-  imgAddTask.setAttribute("id", "btnCreateTask");
-
-  imgComplete.src = "svg/complete-list.svg";
-  imgAddTask.src = "svg/add.svg";
-
-  createCategoryTitle.textContent = "Test";
-
-  list.appendChild(createCategory);
-  createCategory.appendChild(createCategoryHeader);
-  createCategory.appendChild(createListWrapper);
-  createCategoryHeader.appendChild(createCategoryTitle);
-  createCategoryHeader.appendChild(imgComplete);
-  createListWrapper.appendChild(createListItems);
-  createListWrapper.appendChild(createTaskEl);
-  createTaskEl.appendChild(imgAddTask);
-});
-
 // ADD TASK
 function addElement(e) {
   if (e === "") return;

@@ -12,11 +12,11 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #c3d4ff;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .modal {
-  overflow: hidden;
+  overflow-x: hidden;
   position: absolute;
   z-index: 99;
   width: 100%;
@@ -198,16 +198,6 @@ p {
   min-height: 1em;
 }
 
-.create-category {
-  bottom: 65px;
-  left: 20px;
-  position: absolute;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 footer {
   bottom: 0;
   left: 0;
@@ -216,16 +206,6 @@ footer {
   width: 100%;
   background-color: #b3ad7d;
 }
-
-.container {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  gap: 5px;
-}
-
 button {
   display: flex;
   justify-content: center;
@@ -255,16 +235,6 @@ img:hover {
   border-radius: 50px;
 }
 
-.btn-img {
-  height: 20px;
-  width: 20px;
-}
-
-.btn-img:hover {
-  background-color: transparent;
-  border-radius: 0;
-}
-
 .add {
   width: 40px;
   height: 40px;
@@ -275,11 +245,6 @@ img:hover {
   transform: rotate(90deg);
   height: 40px;
   width: 40px;
-}
-
-.complete-box:hover {
-  background-color: rgb(46, 187, 57);
-  border-radius: 8px;
 }
 
 .complete {
@@ -296,21 +261,4 @@ img:hover {
 
 .text-done {
   text-decoration: line-through;
-}
-
-.add-category {
-  border-radius: 50px;
-  width: 40px;
-  height: 40px;
-}
-
-.add-category:hover {
-  background-color: rgb(255, 255, 255);
-  transform: rotate(180deg);
-  height: 40px;
-  width: 40px;
-}
-
-.add-text {
-  cursor: pointer;
 }
