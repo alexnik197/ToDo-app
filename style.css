@@ -198,14 +198,7 @@ p {
   min-height: 1em;
 }
 
-footer {
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  height: 50px;
-  width: 100%;
-  background-color: #b3ad7d;
-}
+
 button {
   display: flex;
   justify-content: center;
@@ -261,4 +254,25 @@ img:hover {
 
 .text-done {
   text-decoration: line-through;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  min-height: 50px;
+  width: 100%;
+  background-color: #b3ad7d;
+}
+
+.results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
 }

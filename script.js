@@ -8,6 +8,8 @@ const inputAdd = document.querySelector("#inputAdd");
 const list = document.querySelector(".list");
 const listItems = document.querySelector("#listItems");
 const addCategory = document.querySelector(".add-category");
+const parag = document.querySelectorAll("p");
+const taskInnerText = document.querySelector(".task-text");
 
 // GLOBAL FUNCTIONS
 const closeModal = () => modal.classList.remove("modal-open");
@@ -59,6 +61,7 @@ function addElement(e) {
   };
 
   newTask.className = "task";
+  textTask.className = "task-text";
   imgComplete.className = "complete";
   imgComplete.src = "svg/complete.svg";
 
@@ -72,12 +75,11 @@ function addElement(e) {
     imgComplete.className = "complete-done";
     textTask.className = "text-done";
 
-    const listCoord = listItems.getBoundingClientRect();
-    const taskCoord = newTask.getBoundingClientRect();
-    const newCoord = listCoord.top - taskCoord.top;
-
     imgComplete.addEventListener("click", function () {
       if (imgComplete.classList.contains("complete-done")) {
+        const listCoord = listItems.getBoundingClientRect();
+        const taskCoord = newTask.getBoundingClientRect();
+        const newCoord = listCoord.top - taskCoord.top;
         newTask.className = "task-done";
         newTask.style.top = `${Math.abs(newCoord)}px`;
         setTimeout(removeTask, 500);
@@ -85,3 +87,15 @@ function addElement(e) {
     });
   });
 }
+
+// FOOTER RESULTS
+const totalNum = document.querySelector("#totalNum");
+
+// EDIT TEXT
+parag.forEach(function (el) {
+  el.addEventListener("click", function () {
+    if (el.classList.contains("task-text")) {
+      console.log("hi");
+    }
+  });
+});
