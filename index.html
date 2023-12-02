@@ -11,10 +11,9 @@
       rel="stylesheet"
     />
     <title>ToDo</title>
-    <script defer src="script.js"></script>
   </head>
   <body>
-    <div class="modal">
+    <div class="modalNew">
       <div class="modal-window">
         <span class="modal-title">Type new task</span>
         <div class="modal-input">
@@ -25,7 +24,21 @@
       </div>
       <!-- modal-window -->
     </div>
-    <!-- modal -->
+    <!-- modalNew -->
+
+    <div class="modalRew">
+      <div class="modal-window">
+        <span class="modal-title">You can rewrite your text</span>
+        <div class="modal-input">
+          <input type="text" class="modal-input__text" id="inputRew" />
+          <button class="btn-add" id="btnRew">Change</button>
+        </div>
+        <!-- modal-input -->
+      </div>
+      <!-- modal-window -->
+    </div>
+    <!-- modalRewrite -->
+
     <section class="notepad">
       <header>
         <h1>ToDo list</h1>
@@ -58,11 +71,16 @@
       <footer>
         <div class="results">
           <div class="total">
-            <span class="total-text">Всего задач: <span class="total-number" id="totalNum">0</span></span>
+            <span class="total-text"
+              >Всего задач:
+              <span class="total-number" id="totalNum">0</span></span
+            >
           </div>
           <!-- .total -->
           <div class="done">
-            <span class="done-text">Выполненно: <span class="done-number">0</span></span>
+            <span class="done-text"
+              >Выполненно: <span class="done-number">0</span></span
+            >
           </div>
           <!-- .done -->
         </div>
@@ -71,4 +89,5 @@
     </section>
     <!-- notepad -->
   </body>
+  <script src="script.js"></script>
 </html>

@@ -15,7 +15,21 @@ body {
   overflow-x: hidden;
 }
 
-.modal {
+.modalRew {
+  overflow-x: hidden;
+  position: absolute;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(44, 44, 44, 0.6);
+  backdrop-filter: blur(2px);
+  display: none;
+}
+
+.modalNew {
   overflow-x: hidden;
   position: absolute;
   z-index: 99;
@@ -63,8 +77,9 @@ body {
 }
 
 .btn-add {
-  height: 35px;
-  width: 50px;
+  padding: 5px 10px;
+  /* height: 35px;
+  width: 50px; */
   background-color: rgb(46, 187, 57);
   border: 2px solid rgb(12, 12, 12);
   transition: 0.2s;
@@ -197,7 +212,6 @@ p {
 .empty-text {
   min-height: 1em;
 }
-
 
 button {
   display: flex;
