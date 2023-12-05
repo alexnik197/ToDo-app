@@ -78,8 +78,6 @@ body {
 
 .btn-add {
   padding: 5px 10px;
-  /* height: 35px;
-  width: 50px; */
   background-color: rgb(46, 187, 57);
   border: 2px solid rgb(12, 12, 12);
   transition: 0.2s;
@@ -90,6 +88,22 @@ body {
 }
 
 .btn-add:active {
+  box-shadow: 0px 0px 0px 2px rgb(12, 12, 12) inset;
+  font-size: 16px;
+}
+
+.btn-rew {
+  padding: 5px 10px;
+  background-color: rgb(50, 168, 201);
+  border: 2px solid rgb(12, 12, 12);
+  transition: 0.2s;
+}
+
+.btn-rew:hover {
+  color: rgb(248, 248, 248);
+}
+
+.btn-rew:active {
   box-shadow: 0px 0px 0px 2px rgb(12, 12, 12) inset;
   font-size: 16px;
 }
@@ -175,7 +189,15 @@ main {
 }
 .category {
   width: 100%;
-  margin-top: 40px;
+}
+
+.category-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  width: 100%;
 }
 .category-header {
   width: 100%;
@@ -185,6 +207,21 @@ main {
   flex-direction: row;
   gap: 10px;
   margin-bottom: 15px;
+}
+
+.btn-state {
+  box-shadow: 0px 0px 0px 1px #202020 inset;
+  background-color: #c9c28d;
+  color: #202020;
+}
+
+.btn-state:hover {
+  box-shadow: 0px 0px 0px 2px #202020 inset;
+}
+
+.btn-state-clicked {
+  background-color: #878260;
+  box-shadow: 0px 0px 0px 2px #202020 inset;
 }
 
 .task {
@@ -254,9 +291,16 @@ img:hover {
   width: 40px;
 }
 
+.adding,
 .complete {
   position: absolute;
   left: -35px;
+}
+
+.complete-end {
+  position: absolute;
+  left: -35px;
+  pointer-events: none;
 }
 
 .complete-done {

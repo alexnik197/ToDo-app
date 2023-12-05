@@ -28,10 +28,10 @@
 
     <div class="modalRew">
       <div class="modal-window">
-        <span class="modal-title">You can rewrite your text</span>
+        <span class="modal-title">Rewrite</span>
         <div class="modal-input">
           <input type="text" class="modal-input__text" id="inputRew" />
-          <button class="btn-add" id="btnRew">Change</button>
+          <button class="btn-rew" id="btnRew">Change</button>
         </div>
         <!-- modal-input -->
       </div>
@@ -47,6 +47,12 @@
       <main>
         <nav class="list">
           <div class="category">
+            <div class="category-buttons">
+              <button class="btn-state btn-state-clicked" id="btnCurrent">
+                Current
+              </button>
+              <button class="btn-state" id="btnDone">Done</button>
+            </div>
             <div class="category-header">
               <h2>All tasks</h2>
             </div>
@@ -56,8 +62,8 @@
               <div class="create-task" id="createTask">
                 <img
                   src="svg/add.svg"
-                  alt="complete"
-                  class="complete add-task"
+                  alt="adding"
+                  class="adding add-task"
                   id="btnCreateTask"
                 />
               </div>
@@ -79,7 +85,7 @@
           <!-- .total -->
           <div class="done">
             <span class="done-text"
-              >Выполненно: <span class="done-number">0</span></span
+              >Выполненно: <span class="done-number" id="doneNum">0</span></span
             >
           </div>
           <!-- .done -->
