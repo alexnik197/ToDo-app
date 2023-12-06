@@ -103,6 +103,24 @@ function toggleClickedBtn() {
   btnDone.classList.toggle("btn-state-clicked");
 }
 
+// MAKE DONE TASKS INACTIVE
+const inactiveTask = function (doneTasks) {
+  if (doneTasks.length >= 1)
+    doneTasks.forEach((task) => {
+      const taskDivId = `task-div-${task.id}`;
+      const taskDiv = document.getElementById(taskDivId);
+      if (taskDiv) {
+        const imgElement = taskDiv.querySelector(".complete");
+        const textElement = taskDiv.querySelector(".task-text");
+        if (imgElement && textElement) {
+          imgElement.classList.add("complete-end");
+          textElement.classList.add("task-text-done");
+        }
+      }
+    });
+};
+// inactiveTask(doneTasks);
+
 btnCurrent.addEventListener("click", function () {
   if (this.classList.contains("btn-state-clicked")) {
   } else {
@@ -118,6 +136,7 @@ btnDone.addEventListener("click", function () {
     toggleClickedBtn();
     btnCreateTask.style.display = "none";
     showTasks(doneTasks);
+    inactiveTask(doneTasks);
   }
 });
 
@@ -195,9 +214,3 @@ listItems.addEventListener("click", function (e) {
     });
   });
 });
-
-// const listCoord = listItems.getBoundingClientRect();
-// const taskCoord = document.querySelector(e).getBoundingClientRect();
-// const newCoord = listCoord.top - taskCoord.top;
-// document.querySelector(".task").style.top = `${Math.abs(newCoord)}px`;
-// setTimeout(removeTask, 500);
